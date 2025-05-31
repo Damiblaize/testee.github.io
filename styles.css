@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    background-image: url('https://i.postimg.cc/fy64GQqb/bgmain.png');
+    font-family: Helvetica;
+  }
+  
+  
+  .navbar {
+    background-color: rgba( #fff);
+    backdrop-filter: blur(5px);
+    padding-top: 16px;
+    padding-right: 40px;
+    padding-bottom: 16px;
+    padding-left: 40px;
+    top: 40px;
+    width: 670px;
+    height: 72px;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .logo span {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .navbar a {
+    color: #ffffffcc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #ff6600;
+  }
+  
+  .community-btn:hover {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: #fff;
+  }
+  
+  .main-body{
+    align-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 70px;
+  }
+  .side-button{
+    justify-content: center;
+    
+    font-family: Verdana, Geneva, Helvetica, sans-serif;
+    margin-top: 30px;
+  }
+  
+
+
+ 
+  /* Smooth fade-in */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Bounce effect */
+  .bounce:hover {
+    animation: bounce 0.6s;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Pulse effect */
+  .pulse:hover {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(#FF840B);
+    
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 102, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+    }
+  }
+  .card-custom {
+    background: linear-gradient(145deg, #1e1e1e, #151515);
+    border: 1px solid #333;
+    border-radius: 1rem;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+  }
+  .week-label {
+    color: #f97316;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .card-text {
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  .list-custom li {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+  }
+  .list-custom li::before {
+    content: "\2022";
+    color: #f97316;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #f97316, #ffdd57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .intro-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #bbb;}
