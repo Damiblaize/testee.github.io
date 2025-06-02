@@ -4,8 +4,18 @@ body {
     font-family: "Manrope", sans-serif;
     
     text-align: center;
+   
+   
+   
+    
   }
-
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  
   .top-page{
     background-image: url('https://i.postimg.cc/fy64GQqb/bgmain.png');
     background-size: cover;
@@ -13,16 +23,22 @@ body {
   }
   
   .navbar {
-    background-color: rgba( #fff);
-    backdrop-filter: blur(5px);
-    padding-top: 16px;
-    padding-right: 40px;
-    padding-bottom: 16px;
-    padding-left: 40px;
-    top: 40px;
-    width: 670px;
-    height: 72px;
-    
+  
+backdrop-filter: blur(20px);
+background-color: #FFFFFF0D;
+border: 0.5px solid #FFFFFF29;
+width: 654.895751953125px;
+height: 72px;
+top: 90px;
+
+gap: 50px;
+border-radius: 16px;
+padding-top: 16px;
+padding-right: 40px;
+padding-left: 40px;
+bottom: 70px;
+margin-bottom: 70px;
+
   }
   
 .manrope- {
@@ -70,6 +86,7 @@ body {
     text-align: center;
     color: #fff;
     padding-top: 70px;
+
   }
   .side-button{
     justify-content: center;
@@ -201,6 +218,8 @@ z-index: 1;
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    size: 14px;
   }
   .list-custom li::before {
     content: "\2022";
@@ -210,22 +229,30 @@ z-index: 1;
     left: 0;
     top: 0;
   }
+
+   
   .section-title {
     font-size: 2.5rem;
     font-weight: bold;
-    background: linear-gradient(to right, #f97316, #ffdd57);
+    background: linear-gradient(to right, white, white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .intro-text {
     max-width: 800px;
     margin: 0 auto 3rem;
-    font-size: 1.1rem;
-    color: #bbb;}
+    color: #bbb;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    }
 
     .cards-main{
 background-image: url('https://i.postimg.cc/nVDfnW4t/background2.png');
-
+font-family: "Roboto", sans-serif;
     }
 
     .footer {
@@ -273,6 +300,279 @@ background-image: url('https://i.postimg.cc/nVDfnW4t/background2.png');
       font-family: "Roboto", sans-serif;
     }
     .text-p {
-      font-family: "Roboto", sans-serif;
+      font-family: "Roboto";
      
     }
+    .faq-q{
+      background-image: url('https://i.postimg.cc/nVDfnW4t/background2.png');
+font-family: "Roboto", sans-serif;
+color: white;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+        padding: 10px;
+      }
+    
+      nav, header, .container, .main, footer {
+        flex-direction: column;
+        width: 100%;
+      }
+    
+      .sidebar {
+        display: none;
+      }
+    }
+   
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    .waitlist-section {
+      backdrop-filter: blur(20px);
+  background-color: #FFFFFF0D;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem;
+      width: 345;
+      
+height: 253;
+gap: 70px;
+
+border-radius: 20px;
+border-width: 0.4px;
+padding-top: 30px;
+padding-right: 16px;
+padding-bottom: 20px;
+padding-left: 16px;
+background: linear-gradient(237.49deg, rgba(189, 58, 8, 0.04) 30.54%, rgba(255, 132, 11, 0.04) 68.06%);
+border: 0.4px solid #FFF8F533
+ 
+
+    }
+
+    .waitlist-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .waitlist-input {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .waitlist-input input {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+    }
+
+    .waitlist-input button {
+      background: linear-gradient(135deg, #ff9a00, #ff5200);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+    }
+
+    .faq-section {
+      max-width: 600px;
+      margin: 3rem auto;
+     
+    }
+
+    .faq-section h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+    }
+
+    .faq-item {
+      
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s;
+
+      
+    }
+
+    .faq-item.open {
+     backdrop-filter: blur(20px);
+  background-color: #FFFFFF0D;
+    }
+
+    .faq-item .question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .faq-item .answer {
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    .faq-item.open .answer {
+      display: block;
+    }
+    
+    /* Footer */
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      background-color: #111;
+    }
+    
+    .footer a {
+      color: #999;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    .footer a:hover {
+      color: #fff;
+    }
+    
+
+
+
+    /* Sidebar */
+.mobile-sidebar {
+  display: none;
+ 
+  color: white;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  height: 50%;
+  width: 250px;
+  padding: 20px;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.mobile-sidebar .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Toggle button (hamburger icon) */
+.toggle-btn {
+  display: none;
+  position: relative;
+  top: -2px;
+  left: 20px;
+  backdrop-filter: blur(20px);
+  background-color: #FFFFFF0D;
+  color: white;
+  
+ 
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  z-index: 1001;
+}
+
+/* Show toggle button and sidebar on small screens */
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .mobile-sidebar {
+    display: block;
+  }
+}
+.sidebar-nav{
+  backdrop-filter: blur(20px);
+  background-color: #FFFFFF0D;
+  
+}
+.row{
+  top: 30px;
+}
+.faq-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.faq-section h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+}
+
+
+
+.faq-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.question {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.answer {
+  margin-top: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.faq-item:not(.open) .answer {
+  display: none;
+}
+
+/* Responsive grid fallback */
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
