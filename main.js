@@ -1,7 +1,11 @@
 function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-  }
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('open');
+
+  const menuIcon = document.getElementById('menuIcon');
+  menuIcon.textContent = sidebar.classList.contains('open') ? '✖' : '☰';
+}
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -75,38 +79,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('waitlist-btn').addEventListener('click', function () {
-      const emailInput = document.getElementById('waitlist-email');
-      const messageBox = document.getElementById('waitlist-message');
+    // Waitlist form logic
+    const joinButton = document.getElementById('waitlist-join-btn');
+    const emailInput = document.getElementById('waitlist-email');
+    const messageBox = document.getElementById('waitlist-message');
+  
+    joinButton.addEventListener('click', function () {
       const email = emailInput.value.trim();
   
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         messageBox.textContent = 'Please enter a valid email address.';
         messageBox.style.color = 'red';
+        messageBox.classList.remove('waitlist-hidden');
         return;
       }
   
       messageBox.textContent = 'Thanks for joining the waitlist!';
       messageBox.style.color = 'limegreen';
+      messageBox.classList.remove('waitlist-hidden');
       emailInput.value = '';
     });
   
-    // FAQ toggling logic
+    // FAQ toggle logic
     document.querySelectorAll('.faq-item').forEach(item => {
       const question = item.querySelector('.question');
+      const toggle = item.querySelector('.toggle');
+  
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
   
+        // Close all FAQs
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('open');
-          i.querySelector('.toggle').textContent = '+';
+          const t = i.querySelector('.toggle');
+          if (t) t.textContent = '+';
         });
   
+        // Toggle current
         if (!isOpen) {
           item.classList.add('open');
-          item.querySelector('.toggle').textContent = '−';
+          if (toggle) toggle.textContent = '−';
         }
       });
     });
   });
+  
   

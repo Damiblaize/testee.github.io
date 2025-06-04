@@ -124,9 +124,7 @@
             <br />
             <br />
             <br />
-            <br />
-            <br /><br />
-            <br />
+            
           </div>
         </div>
       </div>
@@ -142,6 +140,8 @@
             Below is the course outline, the exact journey you’ll be going
             through week by week.
           </p>
+        
+        <div class="osakpolor">
           <div class="row g-4">
             <div class="col-md-6 col-lg-4">
               <div class="week-label">Week 1</div>
@@ -203,7 +203,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" style="padding-top: 50px;">
               <div class="week-label">Week 4</div>
               <div class="card-custom">
                 <br />
@@ -226,7 +226,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" style="padding-top: 50px;">
               <div class="week-label">Week 5</div>
 
               <div class="card-custom">
@@ -249,7 +249,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4" style="padding-top: 50px;">
               <div class="week-label">Week 6</div>
               <div class="card-custom">
                 <br />
@@ -274,32 +274,25 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
     </div>
     <div class="faq-q">
       <!-- Waitlist CTA -->
-       <br>
-       <br>  <br>
-       <br>  <br>
-       <br>
       
-      <section class="waitlist-section" ">
-        <h2>Ready To Stop Watching And Start Building?</h2>
-        <div class="waitlist-input">
-          <input
-            type="email"
-            id="waitlist-email"
-            placeholder="Enter your email"
-          />
-          <button id="waitlist-btn">Join Waitlist</button>
+       <div class="waitlist-wrapper">
+        
+       <div class="waitlist-container">
+        <h2 class="waitlist-heading">Ready To Stop Watching And Start Building?</h2>
+        <div class="waitlist-form-wrapper">
+          <input type="email" id="waitlist-email" class="waitlist-input" placeholder="Enter your email" required />
+          <button id="waitlist-join-btn" class="waitlist-button">Join Waitlist</button>
         </div>
-        <div id="waitlist-message"></div>
-      </section>
-      <br>
-      <br>  <br>
-      <br>  <br>
-      <br>  <br>
+        <p id="waitlist-message" class="waitlist-message waitlist-hidden"></p>
+      </div>
+    </div>
       
+     
       <section class="faq-section">
         <h3>We've got the answers</h3>
       
@@ -357,39 +350,48 @@
       </section>
       
     </div>
-    <div class="ftooter">
+    <div class="footer-container">
       <footer class="footer">
-        <div class="left">
-          <img
-            src="https://i.postimg.cc/SRJLC5hL/ftlogo.pngg"
-            alt="Phoenix Ecosystem Logo"
-            class="ftlogo"
-          />
+        <div class="footer-section left">
+          <img src="https://i.postimg.cc/SRJLC5hL/ftlogo.png" alt="Phoenix Ecosystem Logo" class="ftlogo" />
         </div>
-        <div>
-          <div class="icons">
-            <a>Community </a>
-            <img
-              src="https://i.postimg.cc/cJjtPctT/x.png"
-              alt="x"
-              class="icon"
-            />
-            <img
-              src="https://i.postimg.cc/T1sMfpGV/paper.png"
-              alt="Tg"
-              class="icon"
-            />
-          </div>
+    
+        <div class="footer-section icons">
+          <span class="community-text">Community</span>
+          <a href="https://x.com" target="_blank">
+            <img src="https://i.postimg.cc/cJjtPctT/x.png" alt="X" class="icon" />
+          </a>
+          <a href="https://t.me" target="_blank">
+            <img src="https://i.postimg.cc/T1sMfpGV/paper.png" alt="Telegram" class="icon" />
+          </a>
         </div>
-        <div class="center">
+    
+        <div class="footer-section center">
           <a href="#" class="link">Privacy Policy</a>
-          <a href="#" class="link">Terms and Conditions</a>
+          <a href="#" class="link">Terms & Conditions</a>
         </div>
-        <div class="rght">
-          <span>© Copyright Phoenix Ecosystem. All rights reserved.</span>
+    
+        <div class="footer-section right">
+          <span class="lefty">© Phoenix Ecosystem. All rights reserved.</span>
         </div>
       </footer>
     </div>
+    
   </body>
   <!-- Toast Notification Script -->
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+  
+    openBtn.addEventListener("click", () => {
+      sidebar.classList.add("open");
+      openBtn.style.display = "none";
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("open");
+      openBtn.style.display = "block";
+    });
+  </script>
 </html>
