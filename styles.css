@@ -9,62 +9,6 @@ body {
 }
 
 /* Sidebar toggle and animation fixes */
-.mobile-sidebar {
-  display: none;
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 250px;
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 20px;
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.mobile-sidebar.open {
-  transform: translateX(0);
-}
-
-.mobile-sidebar .close-btn {
-  position: fixed; /* Important: fixed like toggle */
-  top: 20px;
-  left: 20px; /* Same as toggle */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1002; /* above toggle */
-}
-
-/* Hamburger toggle button */
-.toggle-btn {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  backdrop-filter: blur(20px);
-  background-color: #FFFFFF0D;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .toggle-btn {
-      display: block;
-  }
-
-  .mobile-sidebar {
-      display: block;
-  }
-}
 
 /* Keep existing styles below as-is */
 * {
@@ -105,7 +49,7 @@ body {
   border: 0.5px solid #FFFFFF29;
   width: 654.895751953125px;
   height: 72px;
-  top: 50px;
+  top: 20px;
   gap: 30px;
   border-radius: 16px;
   padding-top: 16px;
@@ -388,14 +332,19 @@ body {
     }
     
     .waitlist-button {
-      background: linear-gradient(to right, #f97316, #b91c1c);
-      color: white;
+      background: linear-gradient(237.49deg, #BD3A08 30.54%, #FF840B 68.06%);
+
+      color: rgb(17, 16, 16);
       border: none;
       padding: 14px 24px;
       font-weight: bold;
       font-size: 14px;
       cursor: pointer;
       transition: opacity 0.3s ease;
+
+
+      font-family: "Roboto";
+
     }
     
     .waitlist-button:hover {
@@ -564,72 +513,135 @@ body {
 }
 
     /* Sidebar */
+
+    .page-wrapper {
+      height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Toggle button */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      z-index: 1101;
+      cursor: pointer;
+    }
+    
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(20px);
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Sidebar */
+    /* === MOBILE SIDEBAR STYLES ONLY === */
+
+/* Sidebar container - hidden offscreen by default */
+/* === Default (Desktop) === */
 .mobile-sidebar {
-  display: none;
- 
-  color: white;
-  position: absolute;
-  top: 55px;
-  left: 0;
-  height: 50%;
-  width: 250px;
-  padding: 20px;
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  display: none; /* Hidden by default */
 }
 
-.mobile-sidebar.open {
-  transform: translateX(0);
-  position: relative;
- 
-}
-
-.mobile-sidebar .close-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Toggle button (hamburger icon) */
 .toggle-btn {
-  display: none;
-  position: relative;
-  top: -2px;
-  left: 20px;
-  backdrop-filter: blur(20px);
-  background-color: #FFFFFF0D;
-  color: white;
-  
- 
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  z-index: 1001;
+  display: none; /* Hide hamburger on desktop */
 }
 
-/* Show toggle button and sidebar on small screens */
-@media (max-width: 768px) {
+/* === Mobile Only (≤768px) === */
+@media screen and (max-width: 768px) {
   .toggle-btn {
     display: block;
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    backdrop-filter: blur(20px);
   }
 
   .mobile-sidebar {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    width: 240px;
+    height: 30vh;
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  .mobile-sidebar.open {
+    right: 0; /* Slide in */
+  }
+
+  .mobile-sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    backdrop-filter: blur(20px);
+    cursor: pointer;
+  }
+
+  .mobile-sidebar nav {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* ✅ tighter spacing */
+  }
+  
+
+  .mobile-sidebar .community-btn {
+    margin-top: 30px;
+    padding: 10px;
+    
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
   }
 }
-.sidebar-nav{
-  backdrop-filter: blur(20px);
-  background-color: #FFFFFF0D;
+ 
+/* Show toggle button and sidebar on small screens */
 
-  
-}
-.row{
-  top: 10px;
-  
-}
 .faq-section {
   padding: 40px 20px;
   max-width: 1200px;
@@ -689,3 +701,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+

@@ -1,10 +1,3 @@
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('open');
-
-  const menuIcon = document.getElementById('menuIcon');
-  menuIcon.textContent = sidebar.classList.contains('open') ? '✖' : '☰';
-}
 
 
 

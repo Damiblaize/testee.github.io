@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <div class="top-page">
+    <div class="top-page" id="home">
       <div class="navbar container py-3 px-4 rounded">
         <div class="logo d-flex align-items-center gap-2">
           <img src="main-logo.png" alt="Phoenix Logo" />
@@ -38,48 +38,23 @@
         <button class="community-btn btn btn-outline-light d-none d-md-block">
           Community
         </button>
-        <!-- Mobile Toggle Button -->
-        <button
-          class="toggle-btn"
-          onclick="toggleSidebar()"
-          aria-label="Toggle menu"
-          style="
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            width="24"
-            height="24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm7 10.5a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
 
-        <!-- Sidebar -->
-        <div class="mobile-sidebar" id="sidebar">
-          <button class="close-btn" onclick="toggleSidebar()">✖</button>
-          <nav class="sidebar-nav">
-            <a href="#">Home</a>
-            <br />
-            <a href="#down-course">About Courses</a>
-            <br />
-            <a href="#down-fq">FAQs</a>
-            <br />
-            <a href="#" class="btn btn-outline-light mt-3">Community</a>
-          </nav>
-        </div>
+        <!-- Mobile Toggle Button -->
+       <!-- Single Toggle Button -->
+<button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">☰</button>
+
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+  <nav>
+    <a href="#home">Home</a><br />
+    <a href="#down-course">About</a><br />
+    <a href="#down-fq">FAQ</a>
+    
+    <button class="community-btn">Community</button>
+  </nav>
+</div>
+
+
       </div>
 
       <br />
@@ -380,18 +355,22 @@
   </body>
   <!-- Toast Notification Script -->
   <script>
-    const sidebar = document.getElementById("sidebar");
-    const openBtn = document.getElementById("openSidebar");
-    const closeBtn = document.getElementById("closeSidebar");
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mobileSidebar");
+      const toggleBtn = document.getElementById("toggleBtn");
   
-    openBtn.addEventListener("click", () => {
-      sidebar.classList.add("open");
-      openBtn.style.display = "none";
-    });
+      sidebar.classList.toggle("open");
   
-    closeBtn.addEventListener("click", () => {
-      sidebar.classList.remove("open");
-      openBtn.style.display = "block";
-    });
+      if (sidebar.classList.contains("open")) {
+        toggleBtn.innerHTML = "×"; // Cancel icon
+        toggleBtn.style.color = "red"; // Change color when open
+      } else {
+        toggleBtn.innerHTML = "☰"; // Hamburger icon
+        toggleBtn.style.color = "white"; // Default color
+      }
+    }
   </script>
+  
+
+  
 </html>
