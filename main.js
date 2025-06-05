@@ -4,29 +4,37 @@
 window.addEventListener('DOMContentLoaded', () => {
     // Waitlist form handling
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('waitlist-form');
-    const emailInput = document.getElementById('waitlist-email');
-    const messageBox = document.getElementById('waitlist-message');
-  
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  
-      if (!email) {
-        showMessage("❌ Please enter your email.", "red");
-      } else if (!emailPattern.test(email)) {
-        showMessage("⚠️ Invalid email format.", "orange");
-      } else {
-        showMessage("✅ You're on the waitlist!", "green");
-        emailInput.value = '';
-      }
-    });
-  
-    function showMessage(msg, color) {
-      messageBox.textContent = msg;
-      messageBox.style.color = color;
+  document.getElementById('waitlist-join-btn').addEventListener('click', async function () {
+    const email = document.getElementById('waitlist-email').value;
+    const messageEl = document.getElementById('waitlist-message');
+
+    if (!email) {
+      messageEl.textContent = 'Please enter a valid email.';
+      messageEl.classList.remove('waitlist-hidden');
+      return;
     }
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvgrgnqz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      if (response.ok) {
+        messageEl.textContent = '🎉 You’ve been added to the waitlist!';
+        messageEl.classList.remove('waitlist-hidden');
+        document.getElementById('waitlist-email').value = '';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      messageEl.textContent = '❌ Something went wrong. Please try again.';
+      messageEl.classList.remove('waitlist-hidden');
+    }
+  });
   
     // FAQ toggle
     const faqs = document.querySelectorAll('.faq');

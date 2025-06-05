@@ -617,7 +617,7 @@ color: linear-gradient(237.49deg, #BD3A08 30.54%, #FF840B 68.06%) !important;
     top: 0;
     right: 100%; /* hidden off-screen */
     width: 200px;
-    height: 40vh;
+    height: 30vh;
     background: rgba(30, 30, 30, 0.4);
     backdrop-filter: blur(12px);
     z-index: 1000;
