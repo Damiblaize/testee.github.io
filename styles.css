@@ -26,7 +26,7 @@ body {
   background-size: cover;
   padding-bottom: 0%;
   
-  padding-top: 30px;
+  
 
 }
 
@@ -242,11 +242,12 @@ color: linear-gradient(237.49deg, #BD3A08 30.54%, #FF840B 68.06%) !important;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 1.7rem;
+font-weight: bold;  
   background: linear-gradient(to right, white, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Manrope", sans-serif;;
 }
 
 .intro-text {
